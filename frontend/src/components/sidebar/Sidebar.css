@@ -1,0 +1,209 @@
+/* ========== SIDEBAR ========== */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 32rem;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    background-color: var(--sideBgColor);
+    z-index: 100;
+}
+
+/* ---------- SIDEBAR TOP CONTAINER ---------- */
+.top {
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 3rem;
+    align-items: center;
+}
+
+.top__dot-container {
+    display: flex;
+}
+
+.top__dot {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: .9rem;
+    margin: .8rem;
+}
+
+.dot1 {
+    background-color: var(--dotColor1);
+    cursor: pointer;
+}
+
+.dot2 {
+    background-color: var(--dotColor2);
+    cursor: pointer;
+}
+
+.dot3 {
+    background-color: var(--dotColor3);
+    cursor: pointer;
+}
+
+.top__logo-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.top__img-logo {
+    width: 1.6rem;
+    height: 1.6rem;
+    cursor: pointer;
+}
+
+.top__txt-logo {
+    color: var(--colorWhite);
+    font-weight: bold;
+    margin: 0rem .8rem;
+    cursor: pointer;
+}
+
+.top__highlight {
+    color: var(--logoColor);
+    cursor: pointer;
+}
+
+/* ---------- SIDEBAR NAV/TASK/LABEL CONTAINER ---------- */
+.nav-container,
+.task-container,
+.label-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2.5rem;
+}
+
+.nav__title,
+.task__title,
+.label__title {
+    font-weight: 300;
+    color: var(--sidebarNavigationTitleTextColor);
+}
+
+.nav__list,
+.task__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1.4rem;
+    margin-top: 1.4rem;
+}
+
+.task__list {
+    margin-top: .8rem;
+}
+
+.label__list {
+    margin-top: 1rem;
+    width: 25rem;
+}
+
+.label {
+    display: inline-block;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    padding: .5rem .8rem;
+    font-weight: 300;
+    border-radius: .4rem;
+}
+
+.nav--active {
+    background-color: var(--sidebarHoverBackgroundColor);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0rem;
+    width: 25rem;
+    border-radius: 1rem;
+    margin: .2rem 0rem;
+    cursor: pointer;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    padding: .8rem 0rem;
+    width: 25rem;
+    border-radius: 1rem;
+    margin: .2rem 0rem;
+    cursor: pointer;
+}
+
+/* HOVER */
+.nav:hover,
+.task:hover {
+    background-color: var(--sidebarHoverBackgroundColor);
+}
+
+.nav__img {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding-left: 1rem;
+    cursor: pointer;
+}
+
+.task__dot {
+    width: 1rem;
+    height: 1rem;
+    margin-left: 1rem;  
+    background-color: var(--dotColor1);
+    border-radius: .5rem;
+}
+
+.nav__txt,
+.task__txt { 
+    color: var(--sidebarNavigationItemTextColor);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-weight: 500;
+    width: 18rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+/* ---------- BOTTOM CONTAINER ---------- */
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 5rem 3rem 2.5rem;
+}
+
+.logout-container {
+    display: flex;
+}
+
+.logout__img {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding-right: 1rem;
+}
+
+.logout__txt {
+    color: var(--sidebarNavigationItemTextColor);
+}
+
+.setting {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+@media (max-width: 750px) {
+    .sidebar {
+        display: none;
+    }
+}
