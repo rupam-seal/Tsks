@@ -1,0 +1,37 @@
+:root{
+    /* Common Colours */
+    --colorTransparent:rgba(0,0,0,0);
+    --colorWhite:#FFFFFF;
+    --colorMediumWhite:#ffffffe1;
+    --colorLightWhite:#ffffff7b;
+    --colorBlack:#000000;
+
+    /* Main background colors */
+	--mainBgColor:#12141A;
+    --sideBgColor:#0C0D10;
+
+    /* Sidebar top navigation DOT color */
+    --dotColor1:#FC6058;
+    --dotColor2:#FEC02F;
+    --dotColor3:#2ACA3E;
+
+    /* Logo Color */
+    --logoColor:#F96057;
+
+    /* CardColors */
+    --colorOrange:#F96057;
+    --colorOrangeLight:#FF9B95;
+    --colorYellow:#FFAC2F;
+    --colorYellowLight:#FFCE85;
+    --colorGreen:#09A94F;
+    --colorGreenLight:#25CC6D;
+
+    /* TextColors */
+    --cardTextColor:#FFFFFF;
+    --sidebarHoverBackgroundColor:rgba(28, 30, 39, .7);
+    --sidebarNavigationTitleTextColor:#555555;
+    --sidebarNavigationItemTextColor:#7b7b7b;
+    --profileTextColor:#c8c8c8;
+    --cardBg:#16171f;
+    --seperatorColor:#35363843;
+}
