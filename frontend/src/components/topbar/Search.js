@@ -4,7 +4,7 @@ import { FiSearch } from 'react-icons/fi';
 
 const Search = () => {
   return (
-    <div class="search">
+    <div className="search">
       <SearchIcon>
         <FiSearch />
       </SearchIcon>
@@ -19,7 +19,11 @@ export const SearchIcon = ({ children }) => {
 
 export const SearchInput = () => {
   return (
-    <input type="text" class="search__input" placeholder="Search .."></input>
+    <input
+      type="text"
+      className="search__input"
+      placeholder="Search .."
+    ></input>
   );
 };
 

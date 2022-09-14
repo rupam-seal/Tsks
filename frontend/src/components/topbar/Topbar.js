@@ -7,7 +7,7 @@ import Search from './Search';
 import Welcome from './Welcome';
 import HiddenItem from './HiddenItem';
 
-const Topbar = () => {
+export const Topbar = () => {
   return (
     <div className="topbar">
       <Welcome />
@@ -17,5 +17,3 @@ const Topbar = () => {
     </div>
   );
 };
-
-export default Topbar;
