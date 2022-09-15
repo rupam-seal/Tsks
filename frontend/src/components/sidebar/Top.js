@@ -3,7 +3,7 @@ import { IoLogoIonic } from 'react-icons/io';
 
 const Top = () => {
   return (
-    <div class="top">
+    <div className="top">
       <Navigation />
       <Logo />
     </div>
@@ -13,7 +13,7 @@ const Top = () => {
 // logo text
 const Logo = () => {
   return (
-    <div class="logo">
+    <div className="logo">
       <IoLogoIonic />
       <span>
         Ts<span>ks.</span>
@@ -25,10 +25,10 @@ const Logo = () => {
 // navigation dot
 export const Navigation = () => {
   return (
-    <div class="navigation">
-      <div class="dot dot1"></div>
-      <div class="dot dot2"></div>
-      <div class="dot dot3"></div>
+    <div className="navigation">
+      <div className="dot dot1"></div>
+      <div className="dot dot2"></div>
+      <div className="dot dot3"></div>
     </div>
   );
 };

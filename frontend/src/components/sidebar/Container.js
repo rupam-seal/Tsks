@@ -2,9 +2,9 @@ import React from 'react';
 
 const Container = ({ title, children }) => {
   return (
-    <div class="container">
-      <div class="container__title">{title}</div>
-      <div class="container__list">{children}</div>
+    <div className="container">
+      <div className="container__title">{title}</div>
+      <div className="container__list">{children}</div>
     </div>
   );
 };

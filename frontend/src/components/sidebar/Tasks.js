@@ -1,18 +1,31 @@
 import React from 'react';
 import Container from './Container';
 
+import { FilterTask } from '../utils/Fetch';
+
 const Tasks = () => {
+  const notstartedTask = FilterTask('notstarted');
   return (
     <Container title={'Tasks'}>
-      <TasksList />
+      <TasksList tasks={notstartedTask} />
     </Container>
   );
 };
 
-export const TasksList = () => {
+export const TasksList = ({ tasks }) => {
+  const sliceStr = (str) => {
+    return str.split('', 27).join('');
+  };
   return (
     <>
-      <Task>Go, to gym</Task>
+      {tasks.slice(0, 3).map((task) => {
+        return (
+          <Task key={task._id}>
+            {sliceStr(task.name)}
+            {task.name.length > 27 ? '...' : ''}
+          </Task>
+        );
+      })}
     </>
   );
 };

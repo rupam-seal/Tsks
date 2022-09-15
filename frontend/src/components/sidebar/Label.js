@@ -1,26 +1,24 @@
 import React from 'react';
 import Container from './Container';
 
+import { Labels } from '../utils/Fetch';
+
 const Label = () => {
+  const labels = Labels();
+
   return (
     <Container title={'Label'}>
-      <LabelList />
+      <LabelList>{labels}</LabelList>
     </Container>
   );
 };
 
-export const LabelList = () => {
+export const LabelList = ({ children }) => {
   return (
     <div>
-      <LableItem>Read</LableItem>
-      <LableItem>Coding</LableItem>
-      <LableItem>Workout</LableItem>
-      <LableItem>Django</LableItem>
-      <LableItem>UX</LableItem>
-      <LableItem>Programming</LableItem>
-      <LableItem>Gym</LableItem>
-      <LableItem>Dinner</LableItem>
-      <LableItem>Workout</LableItem>
+      {children.map((label, id) => {
+        return <LableItem key={id}>{label}</LableItem>;
+      })}
     </div>
   );
 };

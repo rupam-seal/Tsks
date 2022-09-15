@@ -26,9 +26,9 @@ export const MenuList = () => {
 
 export const MenuItem = ({ icon, title }) => {
   return (
-    <div class="menu">
+    <div className="menu">
       {icon}
-      <h5 class="menu__text">{title}</h5>
+      <h5 className="menu__text">{title}</h5>
     </div>
   );
 };
