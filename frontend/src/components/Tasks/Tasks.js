@@ -1,19 +1,29 @@
 import React from 'react';
-import Complete from './Complete';
-import InComplete from './InComplete';
-import InProgress from './InProgress';
 import ParentCard from './ParentCard';
 
 import './Tasks.css';
+import { FilterTask } from '../utils/Fetch';
 
-const Tasks = () => {
+export const Tasks = () => {
+  const notstarted = FilterTask('notstarted');
+  const inprogress = FilterTask('inprogress');
+  const complete = FilterTask('complete');
+
   return (
     <div className="overview">
-      <InComplete />
-      <InProgress />
-      <Complete />
+      <div className="notstarted">
+        <ParentCard
+          title={'Not Started'}
+          status="notstarted"
+          task={notstarted}
+        />
+      </div>
+      <div className="inprogress">
+        <ParentCard title={'Complete'} status="complete" task={inprogress} />
+      </div>
+      <div className="complete">
+        <ParentCard title="In Progress" status="inprogress" task={complete} />
+      </div>
     </div>
   );
 };
-
-export default Tasks;

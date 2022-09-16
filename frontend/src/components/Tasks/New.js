@@ -4,7 +4,7 @@ import { MdAdd } from 'react-icons/md';
 
 export const New = () => {
   return (
-    <div class="new">
+    <div className="new">
       <MdAdd />
       <Text>New</Text>
     </div>

@@ -3,10 +3,11 @@ import React from 'react';
 import { SlOptions } from 'react-icons/sl';
 import { IoMdAdd } from 'react-icons/io';
 
-const Header = () => {
+const Header = ({ title, task }) => {
+  const taskCount = task.length;
   return (
     <div className="header">
-      <Content title={'Not Started'} count={'5'} />
+      <Content title={title} count={taskCount} />
       <Options />
     </div>
   );
@@ -14,7 +15,7 @@ const Header = () => {
 
 export const Content = ({ title, count }) => {
   return (
-    <div class="content">
+    <div className="content">
       <Title>{title}</Title>
       <Count>{count}</Count>
     </div>
@@ -26,12 +27,12 @@ export const Title = ({ children }) => {
 };
 
 export const Count = ({ children }) => {
-  return <span class="count">{children}</span>;
+  return <span className="count">{children}</span>;
 };
 
 export const Options = () => {
   return (
-    <div class="options">
+    <div className="options">
       <Icon>
         <SlOptions />
       </Icon>

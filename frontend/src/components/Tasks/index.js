@@ -1,1 +1,1 @@
-export * form './Tasks'
+export * from './Tasks';

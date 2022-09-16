@@ -45,7 +45,7 @@
   border-radius: 0.4rem;
 }
 
-.incomplete
+.notstarted
 .parent .header::before {
     background-color: var(--colorOrange);
 }
@@ -89,7 +89,7 @@
   border-radius: 50%;
 }
 
-.incomplete
+.notstarted
 .parent .count {
     background-color: var(--colorOrange);
     box-shadow: 0rem .4rem 1rem rgba(249, 96, 87, .5);
@@ -129,7 +129,7 @@
   border-radius: 0.5rem;
 }
 
-.incomplete .child {
+.notstarted .child {
   background-color: var(--colorOrange);
 }
 
@@ -162,7 +162,7 @@
   border-radius: 0.4rem;
 }
 
-.incomplete
+.notstarted
 .child .options {
     background-color: var(--colorOrangeLight);
 }
@@ -207,7 +207,7 @@
   border-radius: 0.3rem;
 }
 
-.incomplete
+.notstarted
 .child .label {
     background-color: var(--colorOrangeLight);
 }
@@ -265,9 +265,9 @@
 
 .completed__text {
   font-size: 1rem;
-  font-weight: 300;
-  color: var(--colorWhite);
-  background-color: var(--colorBlack);
+  font-weight: 500;
+  color: var(--colorBlack);
+  background-color: var(--colorWhite);
   padding: 0.2rem 0.8rem;
   border-radius: 0.4rem;
   margin-right: 0.5rem;
@@ -276,12 +276,13 @@
 .completed__date {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--colorBlack);
+  color: var(--colorWhite);
 }
 
 .completed__like {
     font-size: 1.6rem;
-    color: var(--colorOrange);
+    color: var(--colorWhite);
+    cursor: pointer;
 }
 
 .parent .new {

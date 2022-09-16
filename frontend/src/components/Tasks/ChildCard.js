@@ -1,35 +1,65 @@
-import React from 'react';
+import React, { createContext, useContext } from 'react';
 
 import { SlOptions } from 'react-icons/sl';
 import { AiFillEdit } from 'react-icons/ai';
+import Progress from './Progress';
+import Completed from './Completed';
 
-const ChildCard = ({ children }) => {
+const ChildCardContext = createContext();
+const { Provider } = ChildCardContext;
+
+// children: parent card name
+// task: each task on each status
+const ChildCard = ({ task }) => {
+  const value = {
+    task,
+  };
+
   return (
-    <div className="child">
-      <Content>{'Go to gym'}</Content>
-      <TaskDate>{new Date().toLocaleDateString()}</TaskDate>
-      <Labels />
-      {children}
-    </div>
+    <Provider value={value}>
+      <div className="child">
+        <Content />
+        <TaskDate>{task.start_date}</TaskDate>
+        <Labels />
+        {task.status == 'inprogress' ? (
+          <Progress task={task} />
+        ) : task.status == 'complete' ? (
+          <Completed task={task} />
+        ) : (
+          ''
+        )}
+      </div>
+    </Provider>
   );
 };
 
-export const Content = ({ children }) => {
+export const Content = () => {
   return (
-    <div class="content">
-      <Title>{children}</Title>
+    <div className="content">
+      <Title />
       <Options />
     </div>
   );
 };
 
-export const Title = ({ children }) => {
-  return <span className="title">{children}</span>;
+export const Title = () => {
+  const { task } = useContext(ChildCardContext);
+
+  const sliceStr = (str) => {
+    return str.split('', 23).join('');
+  };
+
+  return (
+    <span className="title">
+      {sliceStr(task.name)}
+      {task.name.length > 23 ? '...' : ''}
+    </span>
+  );
 };
 
 export const Options = () => {
   return (
-    <div class="options">
+    <div className="options">
       <Icon>
         <AiFillEdit />
       </Icon>
@@ -45,27 +75,21 @@ export const Icon = ({ children }) => {
 };
 
 export const TaskDate = ({ children }) => {
-  return <span class="date">{children}</span>;
+  return <span className="date">{children}</span>;
 };
 
 export const Labels = () => {
-  return (
-    <div class="labels">
-      <Label>Read</Label>
-      <Label>Coding</Label>
-      <Label>Workout</Label>
-      <Label>Django</Label>
-      <Label>UX</Label>
-      <Label>Programming</Label>
-      <Label>Gym</Label>
-      <Label>Dinner</Label>
-      <Label>Workout</Label>
-    </div>
-  );
+  const { task } = useContext(ChildCardContext);
+
+  const labels = task.labels.map((label, id) => {
+    return <Label key={id}>{label}</Label>;
+  });
+
+  return <div className="labels">{labels}</div>;
 };
 
 export const Label = ({ children }) => {
-  return <span class="label">{children}</span>;
+  return <span className="label">{children}</span>;
 };
 
 export default ChildCard;
