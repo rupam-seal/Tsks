@@ -1,6 +1,5 @@
 import React from 'react';
-
-import ParentCard from '../components/Tasks/ParentCard';
+import { Tasks } from '../components/StatusCard';
 
 import { FilterTask } from '../components/utils/Fetch';
 
@@ -10,19 +9,9 @@ const Overview = () => {
   const complete = FilterTask('complete');
   return (
     <div className="overview">
-      <div className="notstarted">
-        <ParentCard
-          title={'Not Started'}
-          status="notstarted"
-          task={notstarted}
-        />
-      </div>
-      <div className="inprogress">
-        <ParentCard title={'Complete'} status="complete" task={inprogress} />
-      </div>
-      <div className="complete">
-        <ParentCard title="In Progress" status="inprogress" task={complete} />
-      </div>
+      <Tasks status={'notstarted'} title={'Not Started'} task={notstarted} />
+      <Tasks status={'inprogress'} title={'In Progress'} task={inprogress} />
+      <Tasks status={'complete'} title={'Complete'} task={complete} />
     </div>
   );
 };

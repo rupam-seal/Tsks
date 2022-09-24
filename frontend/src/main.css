@@ -28,6 +28,10 @@ h6 {
   padding: 0rem;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Media query for all screen resolution */
 @media (max-width: 750px) {
   body {
