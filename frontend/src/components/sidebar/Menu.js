@@ -4,7 +4,7 @@ import { BsGrid } from 'react-icons/bs';
 import { VscGitPullRequestCreate } from 'react-icons/vsc';
 import { FiSearch } from 'react-icons/fi';
 import { MdOutlineCreate } from 'react-icons/md';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Menu = () => {
   return (
@@ -28,12 +28,12 @@ export const MenuList = () => {
 export const MenuItem = ({ icon, title }) => {
   const name = title.toLowerCase();
   return (
-    <Link to={name === 'overview' ? '/' : `/${name}`} activeClassName="active">
+    <NavLink to={name === 'overview' ? '/' : `/${name}`}>
       <div className="menu">
         {icon}
         <h5 className="menu__text">{title}</h5>
       </div>
-    </Link>
+    </NavLink>
   );
 };
 
